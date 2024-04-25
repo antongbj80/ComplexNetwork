@@ -7,7 +7,7 @@ date = pd.read_excel('E:\AT\Postgraduate\LearningMaterials\复杂网络金融方
 date.columns = ['Date']
 
 #最值归一化
-scaler = MinMaxScaler(feature_range=(0, 10), copy=True)
+scaler = MinMaxScaler(feature_range=(-3,3), copy=True)
 scaler.fit(data)
 scaled_features = scaler.transform(data)
 scaled_features = pd.DataFrame(scaled_features,columns=['ChinaGold', 'COMEXGold', 'Brent'])
@@ -15,7 +15,7 @@ scaled_features = pd.DataFrame(scaled_features,columns=['ChinaGold', 'COMEXGold'
 #合并数据
 final_df = pd.concat([date, scaled_features], axis=1)
 #保存数据  
-final_df.to_csv('scaled_with_date.csv', index=False)
+final_df.to_csv('scaled_with_date(-3,3).csv', index=False)
 
 
 # 
