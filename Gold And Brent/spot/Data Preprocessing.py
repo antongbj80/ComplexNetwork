@@ -16,5 +16,5 @@ scaled_features = pd.DataFrame(scaled_features,columns=['Brent', 'USD_gold'])
 final_df = pd.concat([date, scaled_features], axis=1)
 print(final_df)
 #保存数据  
-final_df.to_csv('./scaled_with_date(0,10).csv', index=False)
+final_df.to_excel('./scaled_with_date(0,10).xlsx', index=False)
 
